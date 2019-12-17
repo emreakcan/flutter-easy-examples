@@ -48,12 +48,15 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     _usernameController.clear();
                     _passwordController.clear();
+
+
+                    Navigator.pushNamed(context, '/detail');
                   },
                 ),
                 RaisedButton(
                   child: Text('NEXT'),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, '/home');
                   },
                 ),
               ],
