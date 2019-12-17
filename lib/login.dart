@@ -42,6 +42,7 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             ButtonBar(
+              alignment: MainAxisAlignment.center,
               children: <Widget>[
                 FlatButton(
                   child: Text('CANCEL'),
