@@ -47,18 +47,24 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 Expanded(
                   flex: 1,
-                  child:  RaisedButton(
-                    child: Text('Match parent test'),
-                    onPressed: () {
+                  child: Container(
+                    margin: EdgeInsets.all(6),
+                    child: RaisedButton(
+                      child: Text('Match parent test'),
+                      onPressed: () {
                       },
+                    ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child:  RaisedButton(
-                    child: Text('Flex 1'),
-                    onPressed: () {
-                    },
+                  child: Container(
+                    margin: EdgeInsets.all(6),
+                    child: RaisedButton(
+                        child: Text('Match parent test'),
+                        onPressed: () {
+                        },
+                      ),
                   ),
                 ),
               ],
