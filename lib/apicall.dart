@@ -3,11 +3,6 @@ import 'dart:convert';
 import 'package:Shrine/api/Api.dart';
 import 'package:Shrine/model/User.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
-import 'model/product.dart';
-import 'model/products_repository.dart';
-
 
 
 class ApiCall extends StatefulWidget {
@@ -22,7 +17,7 @@ class _ApiCallState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sample Grid"),
+        title: Text("Sample Listview"),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(
@@ -34,14 +29,16 @@ class _ApiCallState extends State {
           },
         ),
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        scrollDirection: Axis.vertical,
-        padding: EdgeInsets.all(16.0),
-        childAspectRatio: 4.0,
-        children: _buildGridCards(context),
+      body: ListView.builder(
+          itemCount: users.length,
+          itemBuilder: (BuildContext ctxt, int index) {
+            return Container(
+                padding: const EdgeInsets.all(24),
+                child: Text(users[index].name)
+            );
+          }
       ),
-      resizeToAvoidBottomInset: false,
+
     );
 
   }
@@ -65,21 +62,5 @@ class _ApiCallState extends State {
   dispose() {
     super.dispose();
   }
-
-  List<Text> _buildGridCards(BuildContext context) {
-    if (users == null || users.isEmpty) {
-      return const <Text>[];
-    }
-
-    final ThemeData theme = Theme.of(context);
-
-    return users.map((product) {
-      return Text(
-        product.email,
-        style: theme.textTheme.body2,
-      );
-    }).toList();
-  }
-
 
 }
