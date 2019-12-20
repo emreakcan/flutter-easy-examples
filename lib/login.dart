@@ -52,8 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: RaisedButton(
                       child: Text('Api call and populate list', textAlign: TextAlign.center),
                       onPressed: () {
-                        number *= 444;
-                        _usernameController.text = number.toString();
+                        Navigator.pushNamed(context, '/apicall');
                       },
                     ),
                   ),

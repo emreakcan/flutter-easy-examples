@@ -32,7 +32,7 @@ class _DetailPageState extends State<DetailPage> {
           height: 240,
           alignment: Alignment.center,
           child: Text(
-            "ARA CHO EMRE",
+            "EMRE SAMPLE APP",
             style: TextStyle(color: Colors.white, fontSize: 30),),
         ),
         titleSection,

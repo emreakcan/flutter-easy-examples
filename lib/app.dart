@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:Shrine/apicall.dart';
 import 'package:Shrine/detail.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ import 'home.dart';
 import 'login.dart';
 
 class ShrineApp extends StatelessWidget {
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,6 +38,15 @@ class ShrineApp extends StatelessWidget {
         fullscreenDialog: true,
       );
     }
+
+    if(settings.name == '/apicall'){
+      return MaterialPageRoute<void>(
+        settings: settings,
+        builder: (BuildContext context) => ApiCall(),
+        fullscreenDialog: true,
+      );
+    }
+
 
     if(settings.name == '/home'){
       return MaterialPageRoute<void>(
