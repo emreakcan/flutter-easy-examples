@@ -41,23 +41,66 @@ class _LoginPageState extends State<LoginPage> {
               ),
               obscureText: true,
             ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child:  RaisedButton(
+                    child: Text('Match parent test'),
+                    onPressed: () {
+                      },
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child:  RaisedButton(
+                    child: Text('Flex 1'),
+                    onPressed: () {
+                    },
+                  ),
+                ),
+              ],
+            ),
+
             ButtonBar(
               alignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                FlatButton(
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                      RaisedButton(
+                        child: Text('NEXT'),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
+                      ),
+                    FlatButton(
+                      child: Text('CANCEL'),
+                      onPressed: () {
+                        _usernameController.clear();
+                        _passwordController.clear();
+
+
+                        Navigator.pushNamed(context, '/detail');
+                      },
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                RaisedButton(
                   child: Text('CANCEL'),
                   onPressed: () {
                     _usernameController.clear();
                     _passwordController.clear();
 
-
                     Navigator.pushNamed(context, '/detail');
-                  },
-                ),
-                RaisedButton(
-                  child: Text('NEXT'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
                   },
                 ),
               ],

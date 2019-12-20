@@ -24,8 +24,6 @@ class ShrineApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
-      home: HomePage(),
-      initialRoute: '/login',
       onGenerateRoute: _getRoute,
     );
   }
@@ -43,13 +41,9 @@ class ShrineApp extends StatelessWidget {
     if(settings.name == '/home'){
       return MaterialPageRoute<void>(
         settings: settings,
-        builder: (BuildContext context) => DetailPage(),
+        builder: (BuildContext context) => HomePage(),
         fullscreenDialog: true,
       );
-    }
-
-    if (settings.name != '/login') {
-      return null;
     }
 
     return MaterialPageRoute<void>(
