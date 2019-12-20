@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
         crossAxisCount: 2,
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.all(16.0),
-        childAspectRatio: 8.0 / 9.0,
+        childAspectRatio: 8.0 / 8.0,
         children: _buildGridCards(context),
       ),
       resizeToAvoidBottomInset: false,
@@ -40,7 +40,8 @@ class HomePage extends StatelessWidget {
     }
 
     final ThemeData theme = Theme.of(context);
-    final NumberFormat formatter = NumberFormat.simpleCurrency(locale: Localizations.localeOf(context).toString());
+    final NumberFormat formatter = NumberFormat.simpleCurrency(
+        locale: Localizations.localeOf(context).toString());
 
     return products.map((product) {
       return Card(
@@ -71,6 +72,13 @@ class HomePage extends StatelessWidget {
                     Text(
                       formatter.format(product.price),
                       style: theme.textTheme.body2,
+                    ),
+                    Center(
+                      child: Text(
+                        'Description',
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.body2,
+                      ),
                     ),
                   ],
                 ),

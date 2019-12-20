@@ -25,7 +25,7 @@ class _DetailPageState extends State<DetailPage> {
 
     return Scaffold(
         body: Column(
-      children: [
+          children: [
         Container(
           color: Colors.red,
           width: 600,

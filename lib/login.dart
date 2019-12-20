@@ -8,6 +8,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  int number = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
               obscureText: true,
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -50,8 +50,10 @@ class _LoginPageState extends State<LoginPage> {
                   child: Container(
                     margin: EdgeInsets.all(6),
                     child: RaisedButton(
-                      child: Text('Match parent test'),
+                      child: Text('Api call and populate list', textAlign: TextAlign.center),
                       onPressed: () {
+                        number *= 444;
+                        _usernameController.text = number.toString();
                       },
                     ),
                   ),
@@ -61,15 +63,13 @@ class _LoginPageState extends State<LoginPage> {
                   child: Container(
                     margin: EdgeInsets.all(6),
                     child: RaisedButton(
-                        child: Text('Match parent test'),
-                        onPressed: () {
-                        },
-                      ),
+                      child: Text('Navigation bar and viewpager sample'),
+                      onPressed: () {},
+                    ),
                   ),
                 ),
               ],
             ),
-
             ButtonBar(
               alignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
@@ -77,18 +77,17 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
-                      RaisedButton(
-                        child: Text('NEXT'),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/home');
-                        },
-                      ),
+                    RaisedButton(
+                      child: Text('NEXT'),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/home');
+                      },
+                    ),
                     FlatButton(
                       child: Text('CANCEL'),
                       onPressed: () {
                         _usernameController.clear();
                         _passwordController.clear();
-
 
                         Navigator.pushNamed(context, '/detail');
                       },
@@ -117,5 +116,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-// TODO: Add AccentColorOverride (103)
