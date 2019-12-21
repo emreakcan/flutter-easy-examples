@@ -4,12 +4,9 @@ import 'package:Shrine/api/Api.dart';
 import 'package:Shrine/model/User.dart';
 import 'package:flutter/material.dart';
 
-
 class ApiCall extends StatefulWidget {
-
   @override
-  State<StatefulWidget> createState()  => _ApiCallState();
-
+  State<StatefulWidget> createState() => _ApiCallState();
 }
 
 class _ApiCallState extends State {
@@ -34,13 +31,13 @@ class _ApiCallState extends State {
           itemBuilder: (BuildContext ctxt, int index) {
             return Container(
                 padding: const EdgeInsets.all(24),
-                child: Text(users[index].name)
-            );
-          }
-      ),
-
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/detail_screen", arguments: users[index]);
+                    },
+                    child: Text(users[index].name)));
+          }),
     );
-
   }
 
   var users = new List<User>();
@@ -62,5 +59,4 @@ class _ApiCallState extends State {
   dispose() {
     super.dispose();
   }
-
 }

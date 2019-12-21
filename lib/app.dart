@@ -14,6 +14,8 @@
 
 import 'package:Shrine/apicall.dart';
 import 'package:Shrine/detail.dart';
+import 'package:Shrine/detail_screen.dart';
+import 'package:Shrine/model/User.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -52,6 +54,17 @@ class ShrineApp extends StatelessWidget {
       return MaterialPageRoute<void>(
         settings: settings,
         builder: (BuildContext context) => HomePage(),
+        fullscreenDialog: true,
+      );
+    }
+
+    if(settings.name == '/detail_screen'){
+
+      final User user = settings.arguments;
+
+      return MaterialPageRoute<void>(
+        settings: settings,
+        builder: (BuildContext context) => DetailScreen(user: user),
         fullscreenDialog: true,
       );
     }
