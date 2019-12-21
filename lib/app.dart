@@ -16,6 +16,7 @@ import 'package:Shrine/apicall.dart';
 import 'package:Shrine/detail.dart';
 import 'package:Shrine/detail_screen.dart';
 import 'package:Shrine/model/User.dart';
+import 'package:Shrine/viewpager_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -65,6 +66,15 @@ class ShrineApp extends StatelessWidget {
       return MaterialPageRoute<void>(
         settings: settings,
         builder: (BuildContext context) => DetailScreen(user: user),
+        fullscreenDialog: true,
+      );
+    }
+
+    if(settings.name == '/viewpager_screen'){
+
+      return MaterialPageRoute<void>(
+        settings: settings,
+        builder: (BuildContext context) => ViewPagerScreen(),
         fullscreenDialog: true,
       );
     }

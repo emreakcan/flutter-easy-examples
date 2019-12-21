@@ -63,7 +63,9 @@ class _LoginPageState extends State<LoginPage> {
                     margin: EdgeInsets.all(6),
                     child: RaisedButton(
                       child: Text('Navigation bar and viewpager sample'),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/viewpager_screen');
+                      },
                     ),
                   ),
                 ),

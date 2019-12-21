@@ -28,7 +28,7 @@ class _ApiCallState extends State {
       ),
       body: ListView.builder(
           itemCount: users.length,
-          itemBuilder: (BuildContext ctxt, int index) {
+          itemBuilder: (BuildContext context, int index) {
             return Container(
                 padding: const EdgeInsets.all(24),
                 child: GestureDetector(
