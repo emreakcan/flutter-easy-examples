@@ -5,6 +5,22 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
+
+void highlightTextFieldOnFocus(FocusNode node, TextEditingController controller){
+  node.addListener((){
+    if(node.hasFocus){
+      final newText = controller.text;
+
+      controller.value = controller.value.copyWith(
+        text: newText,
+        selection: TextSelection(baseOffset: 0, extentOffset: newText.length),
+        composing: TextRange.empty,
+      );
+    }
+  });
+}
+
+
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
